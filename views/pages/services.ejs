@@ -1,0 +1,37 @@
+<!-- Leandro Mananquil | 301346791 | 01-28-2024 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head'); %>
+  </head>
+  <body class="container">
+    <header><%- include('../partials/header'); %></header>
+
+    <main>
+      <div class="text-center container-fluid">
+        <h1>Services</h1>
+        <p class="fs-4">
+          If you need a personal website, or e-commerce website, you can contact
+          me for more details
+        </p>
+        <div class="row">
+          <!-- Loop through the servicesList to generate service lists -->
+          <% content.forEach((service) => { %>
+          <div class="col-md-4 mb-4">
+            <div class="card">
+              <!-- Add service photo as an image -->
+              <img src="<%= service.photo %>" class="card-img-top" alt="<%= service.name %>">
+              <div class="card-body">
+                <h3 class="card-title"><%= service.name %></h3>
+                <ul class="list-group"></ul>
+              </div>
+            </div>
+          </div>
+          <% }); %>
+        </div>
+      </div>
+    </main>
+
+    <footer><%- include('../partials/footer'); %></footer>
+  </body>
+</html>
